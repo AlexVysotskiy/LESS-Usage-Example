@@ -1,0 +1,476 @@
+/* Eric Meyer's CSS Reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* End of Eric Meyer's CSS Reset */
+
+html {
+    height: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+//@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext);
+@import url(fonts.css);
+@baseFontSize: 14px;
+@baseFontFamily: Roboto;
+@containerWidth: 1200px;
+@gridCount: 12;
+@bodyBG: #fff;
+@headerBG: #fff;
+@headerHeight: 120px;
+@footerHeight: 300px;
+@footerBG: #333;
+@baseColor: #333;
+@auxiliaryColor: #ff7900;
+
+.border-radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.customised-input(@radius: 5px, @textColor: #000, @borderColor: #000, @bgColor: #fff, @padding: 5px, @fontSize: @baseFontSize) {
+    .border-radius(@radius);
+    font-size: @fontSize;
+    padding: @padding;
+    color: @textColor;
+    border: 1px solid @borderColor;
+    background-color: @bgColor;
+}
+
+.font-base-settings(@weight, @size)
+{
+    font: @weight @size @baseFontFamily;
+}
+
+.font-thin(@size: @baseFontSize)
+{
+    .font-base-settings(100, @size);
+}
+
+.font-light(@size: @baseFontSize)
+{
+    .font-base-settings(300, @size);
+}
+
+.font-regular(@size: @baseFontSize)
+{
+    .font-base-settings(400, @size);
+}
+
+.font-medium(@size: @baseFontSize)
+{
+    .font-base-settings(500, @size);
+}
+
+.font-bold(@size: @baseFontSize)
+{
+    .font-base-settings(700, @size);
+}
+
+.font-black(@size: @baseFontSize)
+{
+    .font-base-settings(900, @size);
+}
+
+body {
+    font: 300 @baseFontSize @baseFontFamily;
+    width: 100%;
+    height: 100%;
+    background-color: color(@bodyBG);
+    color: color(@baseColor);
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+
+.header {
+    
+    @marginBottom: 40px;
+    
+    height: @headerHeight;
+    position: relative;
+    padding-bottom: @marginBottom;
+    
+     .container {
+        padding-top: 21px;
+    }
+    
+    .bottom-shadow
+    {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+    }
+}
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+
+main {
+    padding: 0 0 @footerHeight;
+}
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+
+.footer {
+    
+    margin: -@footerHeight auto 0;
+    height: @footerHeight;
+    background: @footerBG;
+    position: relative;
+    
+    .container {
+        
+        padding-top: 30px;
+        color: #fff;
+        font-size: 18px;
+        
+        span
+        {
+             color: @auxiliaryColor;
+        }
+        
+        .bottom
+        {
+            margin-top: 80px;
+               
+            .company-name
+            {
+                font-size: 24px
+            }
+        }
+    }
+}
+
+.container {
+    width: @containerWidth;
+    margin: 0 auto;
+}
+
+
+.row,
+clearfix {
+    &:before {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+        display: table;
+        content: " ";
+    }
+}
+
+[class*="col-"]
+{
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+
+.col {
+    
+    .gen-cols-width(@n, @i : 1) when (@i =< @n) {
+        &-@{i}
+        {
+            width: (@containerWidth / @gridCount) * @i;
+        }
+        .gen-cols-width(@n, @i + 1);
+    }
+    
+    .gen-cols-width(12);
+}
+
+.col-r {
+    
+    .gen-cols-width(@n, @i : 1) when (@i =< @n) {
+        &-@{i}
+        {
+            width: (@i / @gridCount ) * 100%;
+        }
+        .gen-cols-width(@n, @i + 1);
+    }
+        
+    .gen-cols-width(12);
+}
+
+.text-pull
+{
+    .gen-align(@align)
+    {
+        &-@{align}{
+            text-align: @align;
+        }
+    }
+    
+    .gen-align(left);
+    .gen-align(right);
+    .gen-align(center);
+    
+}
+
+ img {
+       border: 0;
+       vertical-align: middle;
+  }
+
+div.logo
+{
+    
+}
+
+a
+{
+    color: color(@baseColor);
+    text-decoration: none;
+    outline: none;
+    
+    &:hover
+    {
+          color: color(@auxiliaryColor);
+    }
+}
+
+input
+{
+    outline: none;
+}
+
+.btn
+{
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+    //vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+header 
+{
+    @logoWid: 37.5%;
+    .col-r-4.logo
+    {
+       width: @logoWid;
+    }
+    
+     .col-r-7.menu-holder
+    {
+        width: 100% - logoWid;
+    }
+    
+    .menu-holder 
+    {
+        .info .phone
+        {
+             font-size: 16px;
+            
+            .bold
+            {
+                 color: @auxiliaryColor; 
+                .font-black(19px);
+            }
+        }
+        
+        ul.menu
+            {
+                display: table;
+                width: 100%;
+                font-size: 16px;
+                margin-top: 20px;
+                text-align: center;
+                
+                li
+                {
+                    display: table-cell;
+                }
+            }
+       
+    }
+}
+
+#seach-form
+{    
+    [name="search"]
+    {
+        .customised-input(20px, @baseColor, #999, #fff, 8px 15px, 18px);
+        width: 270px;
+        .font-light(18px);
+    }
+    
+    [type="submit"]
+    {
+        .customised-input(20px, #fff, @auxiliaryColor, @auxiliaryColor, 8px 24px, 18px);    
+        margin-left: 18px;
+        .font-light(18px);
+    }
+    
+}
