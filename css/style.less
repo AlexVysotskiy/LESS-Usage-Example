@@ -437,6 +437,111 @@ input
     outline: none;
 }
 
+.bold
+{
+    font-weight: 700!important;
+}
+
+table
+{
+    &.styled
+    {
+        @border: 1px solid #e4e4e4;
+        
+        width: 100%;
+        text-align: center;
+        border-collapse: initial;
+        
+        .border-radius(20px);
+        
+        .font-light(18px);
+        
+        @radius: 10px;
+        @width: 2px;
+        
+        tr
+        {           
+            th
+            {
+                padding: 15px 35px;    
+            }
+            
+            td
+            {
+                padding: 15px 25px; 
+            }
+            
+            td, th
+            {
+                border: @border;
+                
+                &:first-child
+                {
+                    border-left-width: @width;  
+                }
+                
+                &:last-child
+                {
+                    border-right-width: @width;
+                }                
+            }
+            
+            th, td:first-child
+            {
+                background-color: #e4e4e4;
+            }
+            
+            &:first-child
+            {
+                td, th
+                {
+                   border-top-width: @width; 
+                   
+                   &:first-child
+                   {
+                       -webkit-border-top-left-radius:  @radius;
+                       -moz-border-radius-topleft:  @radius;
+                       border-top-left-radius:  @radius;
+                   }
+                    
+                   &:last-child
+                   {
+                       -webkit-border-top-right-radius:  @radius;
+                       -moz-border-radius-topright:  @radius;
+                       border-top-right-radius:  @radius;
+                   }
+                }
+            }
+            
+            &:last-child
+            {
+                td, th
+                {
+                   border-bottom-width: @width; 
+                    
+                    &:first-child
+                   {
+                       -webkit-border-bottom-left-radius:  @radius;
+                       -moz-border-radius-bottomleft:  @radius;
+                       border-bottom-left-radius:  @radius;
+                   }
+                    
+                   &:last-child
+                   {
+                       -webkit-border-bottom-right-radius:  @radius;
+                       -moz-border-radius-bottomright:  @radius;
+                       border-bottom-right-radius:  @radius;
+                   }
+                }
+                
+                 
+            }
+                
+        }
+        
+    }
+}
+
 @h1Size: 32px;
 
  h1
