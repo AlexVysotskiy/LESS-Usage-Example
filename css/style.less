@@ -881,8 +881,55 @@ header
 }
 
 .back-link
+{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+.contacts-info
+{
+    .font-light(22px);
+    span
+    {
+        color: @auxiliaryColor;
+        .font-regular(22px);
+    }
+    
+    div.item + div.item
+    {
+        margin-top: 10px;
+    }
+    
+    .order-call
+    {
+        margin-top: 20px;
+        margin-bottom: 45px;
+        
+        a.link
+        {
+            padding: 20px 70px;
+        }
+        
+        img
+        {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+#map
+{
+    position: relative;
+    height: 545px;
+    margin-bottom: -100px;
+    
+    .shadow
     {
         position: absolute;
-        right: 0px;
-        top: 16px;
+        left: 0;
+        right: 0;
+        top: 0;  
+        z-index: 1000;
     }
+}
