@@ -437,12 +437,43 @@ input
     outline: none;
 }
 
+@h1Size: 32px;
+
  h1
 {
     display: block;
-    .font-medium(32px);
+    .font-medium(@h1Size);
     margin: 10px 0 30px;
 }
+
+ h2
+{
+    display: block;
+    .font-medium(@h1Size - 10);
+    margin: 10px 0 20px;
+}
+
+ol
+{
+    font-size: 18px;
+    &.dig
+    {
+        list-style: decimal;
+        padding-left: 20px;
+    }
+}
+
+ul
+{
+    font-size: 18px;
+
+    &.dash li:before {
+        content:  "—";
+        position: relative;
+        left:     -5px;
+    }
+}
+
 
  
 .btn

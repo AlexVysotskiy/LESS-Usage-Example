@@ -91,7 +91,7 @@
             <div class="container">
 
                 <h1 class="text-pull-center">
-                       Контакты
+                       Доставка и оплата
                 </h1>
 
                 <div class="back-link">
@@ -100,73 +100,63 @@
                     </a>
                 </div>
 
+                <div class="row shipping-info">
 
-                <div class="row contacts-info">
+                    <h2>
+                        Как заказать?
+                    </h2>
 
-                    <div class="">
-                        <div class="item">
-                            <span>Адрес:</span> г. Саратов, ул. Шелковичная, 23а
-                        </div>
-                        <div class="item">
-                            <span>Тел.:</span> (8452) 39-90-30
-                        </div>
-                        <div class="item">
-                            <span>email:</span> indigoteplisa@yandex.ru
-                        </div>
-                        <div class="item">
-                            <span>Skype:</span> teplisasaratov
-                        </div>
-                    </div>
+                    <p>
+                        Всю продукцию компании вы модете заказать:
 
-                    <div class="row text-pull-center order-call">
-                        <div>
-                            <img src="img/icon-phone-grey.png" alt="">
-                        </div>
-                        <div>
-                            <a href="#" class="link">
-                                   Заказать звонок
-                               </a>
-                        </div>
+                    </p>
+                    <ol class="dig">
+                        <li>Позвонить</li>
+                        <li>Оформить</li>
+                        <li>Забрать самостоятельно</li>
+                    </ol>
 
-                    </div>
+                    <h2>
+                        Как оплатить?
+                    </h2>
+
+                    <p>
+                        Оплата за наличный или безналичный расчет
+                    </p>
+                    <p>
+                        Оплата за наличный расчет осуществяется без предоплаты:
+
+                    </p>
+                    <ul class="dash">
+                        <li>Позвонить</li>
+                        <li>Оформить</li>
+                        <li>Забрать самостоятельно</li>
+                    </ul>
+
+                    <h2>
+                        Доставка теплиц по России
+                    </h2>
+                    <p>
+                        Оплата за наличный или безналичный расчет
+                    </p>
+                    <p>
+                        Оплата за наличный или безналичный расчет
+                    </p>
+                    <p>
+                        Оплата за наличный или безналичный расчет
+                    </p>
+                    <p>
+                        Оплата за наличный или безналичный расчет
+                    </p>
+                    <p>
+                        Оплата за наличный или безналичный расчет
+                    </p>
+
 
                 </div>
 
             </div>
 
-            <div id="map">
-                <div class="shadow text-pull-center">
-                    <img src="img/map-shadow.png" alt="">
-                </div>
-            </div>
-
-            <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-            <script type="text/javascript">
-                // MAP
-                var myMap,
-                    myPlacemark;
-
-                ymaps.ready(function () {
-
-                    myMap = new ymaps.Map("map", {
-                        center: [51.539825, 46.025651],
-                        zoom: 15
-                    });
-
-                    myPlacemark = new ymaps.Placemark([51.539825, 46.025651], {
-                        hintContent: 'PlaceMerk',
-                        balloonContent: ''
-                    }, {
-                        iconLayout: 'default#image',
-                        iconImageHref: 'img/place-mark.png',
-                        iconImageSize: [39, 52]
-                    });
-
-                    myMap.geoObjects.add(myPlacemark);
-
-                });
-                // ENDMAP
-            </script>
         </main>
         <!-- .content -->
 
