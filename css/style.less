@@ -157,6 +157,8 @@ summary {
 
 //@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext);
 @import url(fonts.css);
+@import url(chosen.min.css);
+
 @baseFontSize: 14px;
 @baseFontFamily: Roboto;
 @containerWidth: 1200px;
@@ -323,6 +325,14 @@ main {
     }
 }
 
+.row
+{
+    + .row
+    {
+        margin-top: 15px;
+    }
+}
+
 [class*="col-"]
 {
     float: left;
@@ -426,6 +436,19 @@ a
             {
                 background-color: #fff;
                   color: @auxiliaryColor;
+            }
+        }
+        
+        &.grey
+        {
+            border-color: #666;
+            background-color: #fff;
+            color: #666;
+            
+            &:hover
+            {
+                background-color: #666;
+                color: #fff;
             }
         }
     }
@@ -626,22 +649,26 @@ header
                 .font-black(19px);
             }
         }
-        
-        ul.menu
-            {
-                display: table;
-                width: 100%;
-                font-size: 16px;
-                margin-top: 20px;
-                text-align: center;
-                
-                li
-                {
-                    display: table-cell;
-                }
-            }
        
     }
+}
+
+ul
+{
+    &.menu, &.hor
+    {
+        display: table;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 20px;
+        text-align: center;
+
+        li
+        {
+            display: table-cell;
+        }    
+    }
+    
 }
 
 #seach-form
@@ -708,6 +735,7 @@ header
     h1, .bold
     {
      .font-bold(48px);
+        margin-bottom: 10px;
     }
     
     .phone
@@ -833,9 +861,16 @@ header
         margin: 30px 0;
     }
     
+    
+}
+
+#top-sales, .catalog-items
+{
     .item
     {
         .font-light(18px);
+        text-align: center;
+        
         img
         {
             display: block;
@@ -1068,4 +1103,158 @@ header
         top: 0;  
         z-index: 1000;
     }
+}
+
+.reviews-info
+{
+    .font-light(20px);
+    
+    .review
+    {
+        .name
+        {
+            color: @auxiliaryColor;
+            font-weight: 500;
+        }
+        
+        .ver-delemeter
+        {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        
+        .text
+        {
+            .border-radius(15px);
+            margin-top: 10px;
+            border: 1px solid #858585;            
+            padding: 25px;
+        }
+        
+        + .review
+        {
+            margin-top: 35px;
+        }
+    }
+    
+    .review-actions
+    {
+        margin-top: 35px;
+    }
+}
+
+.breadcrumbs
+{
+    margin-bottom: 25px;   
+}
+
+.block
+{
+    display: block;
+}
+
+.m-auto
+{
+    margin: 0 auto;
+}
+
+
+select
+{
+    outline: none;
+    
+    &.custom
+    {
+        display: block;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #e4e4e4;
+        background-image: none;
+        border: 1px solid #666;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        
+        width: 95%;
+        
+        .border-radius(15px);
+    }
+}
+
+
+.product-info
+{
+    .price-block
+    {
+        margin-top: 45px;
+        
+        .font-light(24px);
+        
+        b
+        {
+            .font-black(38px);
+        }
+    }
+    
+    .actions-block
+    {
+          margin-top: 70px;
+        
+        .view-3d
+        {
+            color: @auxiliaryColor;
+            border: 1px solid @auxiliaryColor;
+            .border-radius(15px);
+            padding: 35px 0px;
+            font-size: 18px;
+            
+            
+            img
+            {
+                margin-bottom: 10px;
+            }
+            
+            &:hover
+            {
+                color: #333;
+            }
+        }  
+        
+        .buy-block
+        {
+            margin-left: 20px;
+            position: relative;
+          
+            
+            a.link
+            {
+                .font-regular(22px);
+                
+                &.fast-buy
+                {
+                    margin-top: 37px;
+                }
+            }
+        }
+    }
+    
+    .photos
+    {
+        width: 45%;
+        .main-img
+        {
+            text-align: center;
+        }
+    }
+    
+    .info
+    {
+        margin-left: 5%;
+    }
+    
 }
