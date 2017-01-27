@@ -233,30 +233,30 @@ body {
     height: 100%;
 }
 
+.bottom-shadow
+    {
+        position: absolute;
+        bottom: -7px;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+    }
 
 /* Header
 -----------------------------------------------------------------------------*/
+ @headerPaddingBottom: 40px;
 
 .header {
     
-    @marginBottom: 40px;
-    
     height: @headerHeight;
     position: relative;
-    padding-bottom: @marginBottom;
+    padding-bottom: @headerPaddingBottom;
     
      .container {
         padding-top: 21px;
     }
     
-    .bottom-shadow
-    {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        text-align: center;
-    }
+    
 }
 
 
@@ -264,7 +264,7 @@ body {
 -----------------------------------------------------------------------------*/
 
 main {
-    padding: 0 0 @footerHeight;
+    padding: 0 0 @footerHeight + 100px;
 }
 
 
@@ -304,11 +304,12 @@ main {
 .container {
     width: @containerWidth;
     margin: 0 auto;
+    position: relative;
 }
 
 
 .row,
-clearfix {
+.clearfix {
     &:before {
         display: table;
         content: " ";
@@ -369,9 +370,21 @@ clearfix {
 }
 
  img {
-       border: 0;
-       vertical-align: middle;
+     border: 0;
+     vertical-align: middle;
+     max-width: 100%;
   }
+
+p
+{
+    .font-light(18px);    
+    
+    + p
+    {
+        margin-top: 20px;
+    }
+}
+
 
 div.logo
 {
@@ -473,4 +486,322 @@ header
         .font-light(18px);
     }
     
+}
+
+
+
+.promo-blocks(@height, @marginTop)
+{
+    text-align: center;
+    height: @height;
+    background-position: center;
+    margin-top: @marginTop;
+        //-(@headerPaddingBottom - 10);
+    position: relative;
+}
+
+.main-promo
+{
+    .outer-holder
+    {
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        
+        .middle {
+            
+            display: table-cell;
+            vertical-align: middle;
+            
+            .inner {
+                margin-left: auto;
+                margin-right: auto; 
+            }
+        }
+    }
+}
+
+#first-promo
+{   
+    background-image: url(../img/in-first-bg.png);       
+    color: #fff;
+     .font-light(38px);
+    
+    @promoHeight: 590px;
+    .promo-blocks(@promoHeight, -30px);    
+    
+    h1, .bold
+    {
+     .font-bold(48px);
+    }
+    
+    .phone
+    {
+        
+        .icon
+        {
+            margin-left: -45px;
+            margin-right: 20px;
+        }
+    }
+    
+    .action-link
+    {
+        margin-top: 65px;        
+        
+        a.trigger
+        {              
+            .customised-input(15px, #fff, #fff, transparent, 15px 20px, 24px);
+             transition: background-color 0.3s ease;
+            &:hover
+            {
+                //border-color: @auxiliaryColor;
+                background-color: @auxiliaryColor;
+            }
+            
+        }
+    }
+    
+}
+
+
+#how-choose-promo
+{    
+    background-image: url(../img/in-second-bg.png);
+    
+     @promoHeight: 632px;
+    .promo-blocks(@promoHeight, -30px);
+    
+    h1
+    {
+        .font-bold(48px);
+    }
+    
+    .order-form
+    {
+        @fontSize: 24px;
+        
+        display: table;
+        width: 100%;
+        .font-light(@fontSize);
+        
+        .col-r-6
+        {
+            display: table-cell;
+            vertical-align: middle;
+            float: none;
+        }
+        
+        .order-holder
+        {
+            .row
+            {
+                + .row
+                {
+                    margin-top: 15px;
+                }
+            }
+            
+            .input-holder
+            {
+                float: right;
+
+                div
+                {
+                   display: table-cell;
+                   vertical-align: middle;
+
+                   + div
+                   {
+                       padding-left: 20px;
+                   }
+                }
+            }
+        }
+        
+        
+        input
+        {
+            width: 120px;
+            margin: 0 auto;
+            .customised-input(20px, @baseColor, #999, #fff, 8px 15px, @fontSize);
+            .font-light(@fontSize);
+        }
+        
+        .trigger
+        {
+            
+            margin-top: 40px;
+            a
+            {
+                .customised-input(15px, @auxiliaryColor,  @auxiliaryColor, transparent, 15px 55px, 24px);
+                transition: background-color 0.3s ease;
+                &:hover
+                {
+                    //border-color: #fff;
+                    background-color: #fff;
+                }
+            } 
+        }
+        
+    }
+}
+
+#top-sales
+{
+    .promo-blocks(auto, 0px);
+    margin-top: 0px;
+    
+    h1
+    {
+        .font-medium(32px);
+        margin: 30px 0;
+    }
+    
+    .item
+    {
+        .font-light(18px);
+        img
+        {
+            display: block;
+            max-width: 80%;
+            margin: 20px auto 20px;
+        }
+        
+        div
+        {
+            margin-top: 5px;
+        }
+        
+        b
+        {
+            .font-bold(24px);
+            &.colored
+            {
+                color: @auxiliaryColor;
+            }
+        }
+        
+        .order
+        {
+            margin: 30px 0;
+            a
+            {
+                .customised-input(15px, @auxiliaryColor,  @auxiliaryColor, #fff, 10px 25px, 18px);
+                transition: background-color 0.3s ease;
+                &:hover
+                {
+                    //border-color: #fff;
+                    background-color: @auxiliaryColor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+#advantage-promo
+{    
+    background-image: url(../img/in-advantage-bg.png);
+    .promo-blocks(590px, 30px);
+    color: #fff;
+     .font-light(24px);
+    
+    h1
+    {
+        .font-medium(32px);
+        margin-bottom: 130px;
+    }
+    
+    .adv-list
+    {
+        .item[class*="col-r"]
+        {
+             width: (2.4 / @gridCount ) * 100%;
+            
+            &.up
+            {
+                margin-top: -20px;
+            }
+            
+            &.upper
+            {
+                margin-top: -40px;
+            }
+            
+            .holder
+            {
+                width: 130px;
+                display: table;
+                margin: 0 auto;
+                
+                .img
+                {                    
+                    height: 130px;
+                    text-align: center;
+                    background-color: @auxiliaryColor;
+                    border: 1px solid #fff;
+                    display:table-cell;
+                    vertical-align:middle;
+                    .border-radius(90px) 
+                }
+            }
+            
+            .text
+            {
+                margin-top: 20px;
+            }
+            
+            
+        }
+        
+    }
+    
+}
+
+#workflow-promo
+{    
+    .promo-blocks(400px, 0px);
+    .font-light(20px);
+    margin-bottom: 50px;
+      
+    h1
+    {
+        .font-medium(32px);
+        margin-bottom: 100px;
+    }
+    
+    .item
+    {
+        position: relative;
+        
+        + .item 
+        {
+            &:before
+            {
+                 position: absolute;
+                content: " ";
+                width: 112px;
+                height: 5px;
+                background-image: url(http://localhost/LESSUsageExample/img/dots.png);
+                top: 32px;
+                left: -55px;
+            }
+           
+        }
+        
+        .digit
+        {
+            display: block;
+            padding: 13px 0;
+            margin: 0 auto 15px;
+            width: 65px;
+            background: @auxiliaryColor;
+            color: #fff;
+            .font-black(32px);
+            .border-radius(50px) 
+        }
+        
+    }
 }
