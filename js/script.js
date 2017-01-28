@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     var map = $('#map');
     if (map.length) {
-        
+
         var myMap,
             myPlacemark;
 
@@ -26,5 +26,15 @@ $(document).ready(function () {
 
         });
     }
+
+    $('#lightSlider').lightSlider({
+        gallery: true,
+        item: 1,
+        loop: true,
+        slideMargin: 0,
+        thumbItem: 9,
+        controls: false,
+        thumbItem: 4
+    });
 
 });

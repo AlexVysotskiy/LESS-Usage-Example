@@ -157,7 +157,7 @@ summary {
 
 //@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic,cyrillic-ext);
 @import url(fonts.css);
-@import url(chosen.min.css);
+@import url(lightslider.css);
 
 @baseFontSize: 14px;
 @baseFontFamily: Roboto;
@@ -224,6 +224,7 @@ summary {
 body {
     font: 300 @baseFontSize @baseFontFamily;
     width: 100%;
+    min-width: @containerWidth;
     height: 100%;
     background-color: color(@bodyBG);
     color: color(@baseColor);
@@ -634,7 +635,7 @@ header
     
      .col-r-7.menu-holder
     {
-        width: 100% - logoWid;
+        width: 100% - @logoWid;
     }
     
     .menu-holder 
@@ -1258,3 +1259,36 @@ select
     }
     
 }
+
+#lightSlider
+{
+    .lslide
+    {
+        img
+        {
+            width: 100%;
+        }
+    }
+}
+.lSSlideOuter
+{
+     .lSPager
+    {
+        &.lSGallery
+        {
+            /*width: 100%!important;
+            display: table;
+            
+            li
+            {
+                display: table-cell;
+            }*/
+            
+            img
+            {
+                margin: 0 auto;
+            }
+        }
+    }
+    
+} 
