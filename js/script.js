@@ -26,15 +26,26 @@ $(document).ready(function () {
 
         });
     }
+    
+    $('.light-galery').lightGallery({
+        thumbnail:false,
+        animateThumb: false,
+        showThumbByDefault: false,
+        selector: '.item'
+    }); 
+    
+   
 
-    $('#lightSlider').lightSlider({
+   /* $('#lightSlider').lightSlider({
         gallery: true,
         item: 1,
         loop: true,
         slideMargin: 0,
         thumbItem: 9,
         controls: false,
+        auto: true,
+        speed: 4000,
         thumbItem: 4
     });
-
+*/
 });

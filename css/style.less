@@ -994,7 +994,7 @@ ul
                 content: " ";
                 width: 112px;
                 height: 5px;
-                background-image: url(http://localhost/LESSUsageExample/img/dots.png);
+                background-image: url(../img/dots.png);
                 top: 32px;
                 left: -55px;
             }
@@ -1250,6 +1250,28 @@ select
         .main-img
         {
             text-align: center;
+        }
+        
+        .thumbs
+        {
+            margin-top: 5px;
+            
+             .item + .item
+            {
+                padding-left: 5px;
+            }
+            
+            img
+            {
+                width: 100%;
+            }
+        }
+        
+        .item
+        {
+            cursor: pointer;
+            
+            
         }
     }
     
